@@ -10,5 +10,7 @@ namespace Academy_2023.Data
         [StringLength(10)]
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
+
+        public int? Age { get; set; }
     }
 }

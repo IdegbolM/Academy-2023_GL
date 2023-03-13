@@ -1,4 +1,5 @@
 ﻿using Academy_2023.Data;
+using Academy_2022.Data;
 using SQLitePCL;
 
 namespace Academy_2022.Repositories
@@ -15,6 +16,18 @@ namespace Academy_2022.Repositories
         public User? GetById(int id)
         {
             return _context.Users.FirstOrDefault(x => x.Id == id);
+        }
+
+        public User? Matured(int Age)
+        {
+            var ageQuery = _context.Users.Where(x => x.Age == 18);
+
+            foreach (var user in ageQuery)
+            {
+                return user;
+            }
+
+            return null;
         }
 
         public void Create(User data)
